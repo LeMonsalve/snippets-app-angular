@@ -1,0 +1,9 @@
+<div *ngIf="!files.length; else renderFiles" class="p-4 m-2 border-2 border-dashed border-sky-700">
+    <h3 class="text-sky-700 text-center">you don´t have files, create one <i class="pi pi-arrow-circle-up"></i></h3>
+</div>
+
+<ng-template #renderFiles>
+    <div class="snippet-list">
+        <app-snippet-item *ngFor="let file of files" [snippetName]="file" ></app-snippet-item>
+    </div>
+</ng-template>

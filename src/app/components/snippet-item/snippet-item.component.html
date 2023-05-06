@@ -1,0 +1,18 @@
+<div class="py-2 px-4 task hover:border-neutral-900 hover:cursor-pointer flex break-words gap-3"
+     [ngClass]="{
+        'bg-sky-900': selectedSnippet.name === snippetName,
+        'justify-between': selectedSnippet.name === snippetName
+     }"
+     (click)="selectSnippet()">
+    {{ snippetName }}
+
+    <div class="flex flex-row gap-2"
+         *ngIf="selectedSnippet.name === snippetName">
+        <button (click)="deleteSnippet($event)" class="hover:text-red-600">
+            <i class="pi pi-trash"></i>
+        </button>
+        <button (click)="cancelSnippet($event)" class="hover:text-amber-600">
+            <i class="pi pi-ban"></i>
+        </button>
+    </div>
+</div>

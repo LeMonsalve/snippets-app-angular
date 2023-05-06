@@ -1,0 +1,12 @@
+<div style="width: 100%; height: calc(100vh)">
+    <ngx-monaco-editor  [options]="editorOptions" [(ngModel)]="selectedSnippet.code" style="width: 100%; height: 100%"
+                        *ngIf="selectedSnippet.name; else noSelectedSnippet"
+                        (ngModelChange)="onCodeChanged($event)" ></ngx-monaco-editor>
+
+    <ng-template #noSelectedSnippet>
+        <div class="flex flex-col justify-center items-center w-full h-screen">
+            <div class="text-2xl text-gray-500">No snippet selected</div>
+            <div class="text-gray-600"><i class="pi pi-arrow-circle-left"></i> Select one</div>
+        </div>
+    </ng-template>
+</div>

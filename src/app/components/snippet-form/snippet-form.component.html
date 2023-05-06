@@ -1,0 +1,8 @@
+<form (ngSubmit)="submit()">
+    <input type="text" placeholder="Write an Snippet"
+           class="bg-zinc-900 border-none outline-none p-4"
+           name="snippetName"
+           [(ngModel)]="snippetName">
+
+    <input type="submit" value="Create" [hidden]="true">
+</form>
